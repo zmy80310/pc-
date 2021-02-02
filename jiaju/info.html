@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/info.css">
+</head>
+<body>
+    <div class="index-wrap">
+        <!--头部-->
+        <div class="index-header">
+            <div class="header-left" onselectstart="return false">
+                建材物料模版
+            </div>
+            <div class="header-right">
+                <a href="index.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div onselectstart="return false"  class="shouye">首页</div></a>
+                <a href="case.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div  onselectstart="return false"  class="anli">案例展示</div></a>
+                <a href="about.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div  onselectstart="return false" class="guanyu">关于我们</div></a>
+                <a href="building.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div  onselectstart="return false" class="jiancai">建材百科</div></a>
+                <a href="service.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div onselectstart="return false"   class="fuwu">服务预约</div></a>
+                <a href="contact.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div onselectstart="return false"   class="lianxi">联系我们</div></a>
+            </div>
+        </div>
+        <!--手机端头部-->
+        <div class="mobile-header">
+            <div class="mobile-item">
+                <div class="mul"></div>
+                <div class="mul1"></div>
+                <div class="biaoti">建材物料模版</div>
+            </div>
+            <div class="yincang">
+                <ul>
+                    <a href="index.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>首页</li></a>
+                    <a href="case.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <li>案例展示</li></a>
+                    <a href="about.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>关于我们</li></a>
+                    <a href="building.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>建材百科</li></a>
+                    <a href="service.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>服务预约</li></a>
+                    <a href="contact.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <li>联系我们</li></a>
+                </ul>
+            </div>
+        </div>
+        <!--背景-->
+        <div class="case-bg">
+
+        </div>
+        <!--标题-->
+        <div class="info-text">
+            <div class="text">
+                企业标志LOGO设计有哪些事项是需要忌讳和注意的
+            </div>
+            <div class="text-timer">
+                2019-11-25 10:01
+            </div>
+            <div class="text-x"></div>
+            <div class="info-content">
+                <p>
+                    设计商标和徽志，首先要考虑一些重要原则。下面试探讨几个要点：
+                </p>
+                <p>
+                    1、识别性。
+                </p>
+                <p>
+                    商标须有独特的个性，容易使公众认识及记忆，留下良好深刻的印象.但相对来说,若商标与别人的相类似,看去似曾相识,没有特征而面目模糊的设计,一定不会使人留有印象.
+                </p>
+                <p>
+                    2、原创性。
+                </p>
+                <p>设计贵乎具有原创的意念与造形，商标亦如是。原创的商标必能在公众心中留下独特的印象，也能经得起时间的考验。原创可以是无中生有，也可以在传统与日常生活中加入创意，推陈出新。</p>
+                <p>3、时代性。</p>
+                <p>商标不可与时代脱节，使人有陈旧落后的印象。现代企业的商标，当然要具有现代感；富有历史传统的企业，也要注入时代品味，继往开来，启导潮流。</p>
+                <p>4、地域性。</p>
+                <p>每一个机构企业都具有不同的地域性，它可能反映于机构的历史背景，产品或服务背后的文化根源，与市场的范围和对象等。商标可具有明显的地域特征；但相对来说，也可以具有较强的国际形象。</p>
+            </div>
+            <div class="text-x1"></div>
+            <div class="index-info">
+                <div class="info-one">
+                    上一篇
+                    <span> 白酒酒吧白搭品牌标志LOGO设计和品牌形象设计</span>
+                </div>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="index-bottom">
+            法律声明浙ICP备09109183号-25浙公网安备 33010002000124号
+        </div>
+    </div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    $('.mul').click(function () {
+        $('.yincang').css('height',$(window).height());
+        $(".yincang").slideDown("slow");
+        $(".panel").slideUp("slow");
+        $(".mul").hide();
+        $(".mul1").show();
+        $('.biaoti').hide();
+    })
+    $('.mul1').click(function () {
+        console.log(111);
+        $(".yincang").slideUp("slow");
+        $(".mul1").hide();
+        $(".mul").show();
+        setTimeout(function () {
+            $('.biaoti').show();
+        },700)
+    })
+</script>
+</html>

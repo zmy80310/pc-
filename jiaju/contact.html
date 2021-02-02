@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/contact.css">
+<!--    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>-->
+</head>
+<body>
+<div class="index-wrap">
+    <!--头部-->
+    <div class="index-header">
+        <div class="header-left" onselectstart="return false">
+            建材物料模版
+        </div>
+        <div class="header-right">
+            <a href="index.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div onselectstart="return false"  class="shouye">首页</div></a>
+            <a href="case.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div  onselectstart="return false"  class="anli">案例展示</div></a>
+            <a href="about.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div  onselectstart="return false" class="guanyu">关于我们</div></a>
+            <a href="building.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div  onselectstart="return false" class="jiancai">建材百科</div></a>
+            <a href="service.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div onselectstart="return false"   class="fuwu">服务预约</div></a>
+            <a href="contact.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <div onselectstart="return false"   class="lianxi">联系我们</div></a>
+        </div>
+    </div>
+    <!--手机端头部-->
+    <div class="mobile-header">
+        <div class="mobile-item">
+            <div class="mul"></div>
+            <div class="mul1"></div>
+            <div class="biaoti">建材物料模版</div>
+        </div>
+        <div class="yincang">
+            <ul>
+                <a href="index.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>首页</li></a>
+                <a href="case.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <li>案例展示</li></a>
+                <a href="about.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>关于我们</li></a>
+                <a href="building.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>建材百科</li></a>
+                <a href="service.html" style="text-decoration:none;color: rgb(51, 51, 51);"><li>服务预约</li></a>
+                <a href="contact.html" style="text-decoration:none;color: rgb(51, 51, 51);"> <li>联系我们</li></a>
+            </ul>
+        </div>
+    </div>
+    <!--背景-->
+    <div class="case-bg">
+
+    </div>
+    <!-- 简介-->
+    <div class="contact-body">
+        <div class="contact-tit">
+            联系我们
+        </div>
+        <div class="contact-item">
+            <div class="item-left">
+                <img src="./image/lianxi-left.png" alt="">
+            </div>
+            <div class="item-right">
+                <div class="item-one">
+                    <div style="color: rgb(125, 140, 153);">广州XXX总部</div>
+                    <div>
+                        公司地点：XXX省XXX市XXX县XXX路XXX号
+                    </div>
+                    <div>
+                        区域邮编：100000
+                    </div>
+                    <div>联系人：李先生</div>
+                </div>
+                <div class="item-one">
+                    <div style="color: rgb(125, 140, 153);">广州XXX总部</div>
+                    <div>
+                        公司地点：XXX省XXX市XXX县XXX路XXX号
+                    </div>
+                    <div>
+                        区域邮编：100000
+                    </div>
+                    <div>联系人：李先生</div>
+                </div>
+                <div class="item-one">
+                    <div style="color: rgb(125, 140, 153);">广州XXX总部</div>
+                    <div>
+                        公司地点：XXX省XXX市XXX县XXX路XXX号
+                    </div>
+                    <div>
+                        区域邮编：100000
+                    </div>
+                    <div>联系人：李先生</div>
+                </div>
+                <div class="item-one">
+                    <div style="color: rgb(125, 140, 153);">广州XXX总部</div>
+                    <div>
+                        公司地点：XXX省XXX市XXX县XXX路XXX号
+                    </div>
+                    <div>
+                        区域邮编：100000
+                    </div>
+                    <div>联系人：李先生</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--地图-->
+    <div class="map">
+        <div id="container"></div>
+    </div>
+    <!--底部-->
+    <div class="index-bottom">
+        法律声明浙ICP备09109183号-25浙公网安备 33010002000124号
+    </div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=c677979ab55999d712221e40317e9482"></script>
+<script>
+    $('.mul').click(function () {
+        $('.yincang').css('height',$(window).height());
+        $(".yincang").slideDown("slow");
+        $(".panel").slideUp("slow");
+        $(".mul").hide();
+        $(".mul1").show();
+        $('.biaoti').hide();
+    })
+    $('.mul1').click(function () {
+        console.log(111);
+        $(".yincang").slideUp("slow");
+        $(".mul1").hide();
+        $(".mul").show();
+        setTimeout(function () {
+            $('.biaoti').show();
+        },700)
+    })
+    var map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [116.481181, 39.989792],
+        zoom: 16
+    });
+    addMarker();
+
+    //添加marker标记
+    function addMarker() {
+        map.clearMap();
+        var marker = new AMap.Marker({
+            map: map,
+            position: [116.481181, 39.989792]
+        });
+        //鼠标点击marker弹出自定义的信息窗体
+        AMap.event.addListener(marker, 'click', function () {
+            infoWindow.open(map, marker.getPosition());
+        });
+    }
+
+    //实例化信息窗体
+    var title = '方恒假日酒店<span style="font-size:11px;color:#F00;">价格:318</span>',
+        content = [];
+    content.push("<img src='http://tpc.googlesyndication.com/simgad/5843493769827749134'>地址：北京市朝阳区阜通东大街6号院3号楼东北8.3公里");
+    content.push("电话：010-64733333");
+    content.push("<a href='https://ditu.amap.com/detail/B000A8URXB?citycode=110105'>详细信息</a>");
+    var infoWindow = new AMap.InfoWindow({
+        isCustom: true,  //使用自定义窗体
+        content: createInfoWindow(title, content.join("<br/>")),
+        offset: new AMap.Pixel(16, -45)
+    });
+
+    //构建自定义信息窗体
+    function createInfoWindow(title, content) {
+        var info = document.createElement("div");
+        info.className = "custom-info input-card content-window-card";
+
+        //可以通过下面的方式修改自定义窗体的宽高
+        //info.style.width = "400px";
+        // 定义顶部标题
+        var top = document.createElement("div");
+        var titleD = document.createElement("div");
+        var closeX = document.createElement("img");
+        top.className = "info-top";
+        titleD.innerHTML = title;
+        closeX.src = "https://webapi.amap.com/images/close2.gif";
+        closeX.onclick = closeInfoWindow;
+
+        top.appendChild(titleD);
+        top.appendChild(closeX);
+        info.appendChild(top);
+
+        // 定义中部内容
+        var middle = document.createElement("div");
+        middle.className = "info-middle";
+        middle.style.backgroundColor = 'white';
+        middle.innerHTML = content;
+        info.appendChild(middle);
+
+        // 定义底部内容
+        var bottom = document.createElement("div");
+        bottom.className = "info-bottom";
+        bottom.style.position = 'relative';
+        bottom.style.top = '0px';
+        bottom.style.margin = '0 auto';
+        var sharp = document.createElement("img");
+        sharp.src = "https://webapi.amap.com/images/sharp.png";
+        bottom.appendChild(sharp);
+        info.appendChild(bottom);
+        return info;
+    }
+
+    //关闭信息窗体
+    function closeInfoWindow() {
+        map.clearInfoWindow();
+    }
+</script>
+</html>
